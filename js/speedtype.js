@@ -14,20 +14,24 @@ function enter(){
         document.getElementById('score').innerHTML =
           parseInt(document.getElementById('score').innerHTML) + 1;
 
-        document.getElementById('target').innerHTML=
-          random_letter()
-          + random_letter()
-          + random_letter()
-          + random_letter()
-          + random_letter();
+        document.getElementById('target').innerHTML = random_word(5);
 
         time_remaining -= .1;
         document.getElementById('time').innerHTML = time_remaining.toFixed(1);
     }
 }
 
-function random_letter(){
-    return 'abcdefghijklmnopqrstuvwxyz'[Math.floor(Math.random() * 26)]
+function random_word(length){
+    var letters = 'abcdefghijklmnopqrstuvwxyz';
+    var loop_counter = 0;
+    var word = '';
+
+    while(loop_counter < length){
+        loop_counter++;
+        word += letters[Math.floor(Math.random() * 26)];
+    }
+
+    return word;
 }
 
 function start(){
@@ -35,12 +39,7 @@ function start(){
 
     time_remaining = 10.0;
 
-    document.getElementById('target').innerHTML=
-      random_letter()
-      + random_letter()
-      + random_letter()
-      + random_letter()
-      + random_letter();
+    document.getElementById('target').innerHTML = random_word(5);
 
     document.getElementById('text').value = '';
     document.getElementById('text').disabled = false;
