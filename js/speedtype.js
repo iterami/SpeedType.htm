@@ -8,17 +8,19 @@ function decisecond(){
 }
 
 function enter(){
-    if(document.getElementById('text').value == document.getElementById('target').innerHTML){
-        document.getElementById('text').value='';
-
-        document.getElementById('score').innerHTML =
-          parseInt(document.getElementById('score').innerHTML) + 1;
-
-        document.getElementById('target').innerHTML = random_word(5);
-
-        time_remaining -= .1;
-        document.getElementById('time').innerHTML = time_remaining.toFixed(1);
+    if(document.getElementById('text').value != document.getElementById('target').innerHTML){
+        return;
     }
+
+    document.getElementById('text').value='';
+
+    document.getElementById('score').innerHTML =
+      parseInt(document.getElementById('score').innerHTML) + 1;
+
+    document.getElementById('target').innerHTML = random_word(5);
+
+    time_remaining -= .1;
+    document.getElementById('time').innerHTML = time_remaining.toFixed(1);
 }
 
 function random_word(length){
@@ -79,11 +81,11 @@ window.onkeydown = function(e){
     var key = window.event ? event : e;
     key = key.charCode ? key.charCode : key.keyCode;
 
-    // Enter
+    // ENTER: enter typed value for validation.
     if(key == 13){
         enter();
 
-    // ESC
+    // ESC: stop current game.
     }else if(key == 27){
         stop();
     }
@@ -91,12 +93,14 @@ window.onkeydown = function(e){
 
 window.onkeyup = function(e){
     // Doesn't work if the game is running.
-    if(interval == 0){
-        var key = window.event ? event : e;
-        key = key.charCode ? key.charCode : key.keyCode
+    if(interval != 0){
+        return;
+    }
 
-        if(key == 72){
-            start();
-        }
+    var key = window.event ? event : e;
+    key = key.charCode ? key.charCode : key.keyCode
+
+    if(key == 72){
+        start();
     }
 };
