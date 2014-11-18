@@ -12,7 +12,7 @@ function enter(){
         return;
     }
 
-    document.getElementById('text').value='';
+    document.getElementById('text').value = '';
 
     document.getElementById('score').innerHTML =
       parseInt(document.getElementById('score').innerHTML) + 1;
@@ -29,8 +29,8 @@ function random_word(length){
     var word = '';
 
     while(loop_counter < length){
-        loop_counter++;
         word += letters[Math.floor(Math.random() * 26)];
+        loop_counter++;
     }
 
     return word;
@@ -64,9 +64,9 @@ function start(){
 
 function stop(){
     clearInterval(interval);
+    interval = 0;
 
     document.getElementById('text').disabled = true;
-    interval = 0;
 
     document.getElementById('start-button').value = 'Start [H]';
     document.getElementById('start-button').onclick = function(){
