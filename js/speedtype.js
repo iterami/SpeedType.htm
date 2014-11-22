@@ -78,8 +78,7 @@ var interval = 0;
 var time_remaining = 0;
 
 window.onkeydown = function(e){
-    var key = window.event ? event : e;
-    key = key.charCode ? key.charCode : key.keyCode;
+    var key = e.keyCode || e.which;
 
     // ENTER: enter typed value for validation.
     if(key == 13){
@@ -97,8 +96,7 @@ window.onkeyup = function(e){
         return;
     }
 
-    var key = window.event ? event : e;
-    key = key.charCode ? key.charCode : key.keyCode
+    var key = e.keyCode || e.which;
 
     if(key == 72){
         start();
