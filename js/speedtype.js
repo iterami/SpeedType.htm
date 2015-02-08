@@ -37,7 +37,7 @@ function random_word(length){
 }
 
 function start(){
-    clearInterval(interval);
+    window.clearInterval(interval);
 
     time_remaining = 10.0;
 
@@ -56,14 +56,14 @@ function start(){
         stop();
     };
 
-    interval = setInterval(
+    interval = window.setInterval(
       'decisecond()',
       100
     );
 }
 
 function stop(){
-    clearInterval(interval);
+    window.clearInterval(interval);
     interval = 0;
 
     document.getElementById('text').disabled = true;
