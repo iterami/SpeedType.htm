@@ -9,3 +9,6 @@ input{
     color: #aaa;
     text-align: center;
 }
+input[type=button]{
+    cursor: pointer;
+}
