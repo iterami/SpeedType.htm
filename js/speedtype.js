@@ -1,3 +1,5 @@
+'use strict';
+
 function decisecond(){
     document.getElementById('time').innerHTML =
       (parseFloat(document.getElementById('time').innerHTML) - .1).toFixed(1);
