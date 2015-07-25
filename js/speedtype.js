@@ -83,11 +83,11 @@ window.onkeydown = function(e){
     var key = e.keyCode || e.which;
 
     // ENTER: enter typed value for validation.
-    if(key == 13){
+    if(key === 13){
         enter();
 
     // ESC: stop current game.
-    }else if(key == 27){
+    }else if(key === 27){
         stop();
     }
 };
@@ -100,7 +100,7 @@ window.onkeyup = function(e){
 
     var key = e.keyCode || e.which;
 
-    if(key == 72){
+    if(key === 72){
         start();
     }
 };
