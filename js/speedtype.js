@@ -54,9 +54,7 @@ function start(){
     document.getElementById('score').innerHTML = 0;
 
     document.getElementById('start-button').value = 'Stop [ESC]';
-    document.getElementById('start-button').onclick = function(){
-        stop();
-    };
+    document.getElementById('start-button').onclick = stop;
 
     interval = window.setInterval(
       'decisecond()',
@@ -71,9 +69,7 @@ function stop(){
     document.getElementById('text').disabled = true;
 
     document.getElementById('start-button').value = 'Start [H]';
-    document.getElementById('start-button').onclick = function(){
-        start();
-    };
+    document.getElementById('start-button').onclick = start;
 }
 
 var interval = 0;
