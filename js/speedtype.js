@@ -88,6 +88,12 @@ window.onkeydown = function(e){
     }
 };
 
+window.onload = function(e){
+    document.getElementById('score').innerHTML = '0';
+    document.getElementById('target').innerHTML = '-----';
+    document.getElementById('time').innerHTML = '10.0';
+};
+
 window.onkeyup = function(e){
     // Doesn't work if the game is running.
     if(interval != 0){
