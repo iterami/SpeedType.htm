@@ -10,7 +10,7 @@ function decisecond(){
 }
 
 function enter(){
-    if(document.getElementById('text').value != document.getElementById('target').innerHTML){
+    if(document.getElementById('text').value !== document.getElementById('target').innerHTML){
         return;
     }
 
@@ -96,7 +96,7 @@ window.onload = function(e){
 
 window.onkeyup = function(e){
     // Doesn't work if the game is running.
-    if(interval != 0){
+    if(interval !== 0){
         return;
     }
 
