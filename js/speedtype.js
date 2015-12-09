@@ -1,10 +1,11 @@
 'use strict';
 
 function decisecond(){
-    document.getElementById('time').innerHTML =
-      (parseFloat(document.getElementById('time').innerHTML) - .1).toFixed(1);
+    var time = (parseFloat(document.getElementById('time').innerHTML) - .1).toFixed(1);
 
-    if(parseFloat(document.getElementById('time').innerHTML) <= 0){
+    document.getElementById('time').innerHTML = time;
+
+    if(time <= 0){
         stop();
     }
 }
