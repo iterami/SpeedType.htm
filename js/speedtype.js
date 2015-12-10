@@ -44,18 +44,14 @@ function start(){
 
     time_remaining = 10.0;
 
-    document.getElementById('target').innerHTML = random_word(5);
-
-    document.getElementById('text').value = '';
-    document.getElementById('text').disabled = false;
-    document.getElementById('text').focus();
-
-    document.getElementById('time').innerHTML = time_remaining;
-
     document.getElementById('score').innerHTML = 0;
-
     document.getElementById('start-button').value = 'Stop [ESC]';
     document.getElementById('start-button').onclick = stop;
+    document.getElementById('target').innerHTML = random_word(5);
+    document.getElementById('text').disabled = false;
+    document.getElementById('text').focus();
+    document.getElementById('text').value = '';
+    document.getElementById('time').innerHTML = time_remaining;
 
     interval = window.setInterval(
       'decisecond()',
@@ -67,10 +63,9 @@ function stop(){
     window.clearInterval(interval);
     interval = 0;
 
-    document.getElementById('text').disabled = true;
-
     document.getElementById('start-button').value = 'Start [H]';
     document.getElementById('start-button').onclick = start;
+    document.getElementById('text').disabled = true;
 }
 
 var interval = 0;
