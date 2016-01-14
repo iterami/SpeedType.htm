@@ -1,7 +1,7 @@
 'use strict';
 
 function decisecond(){
-    var time = (parseFloat(document.getElementById('time').innerHTML) - .1).toFixed(1);
+    time = (time - .1).toFixed(1);
 
     document.getElementById('time').innerHTML = time;
 
@@ -43,6 +43,7 @@ function start(){
     window.clearInterval(interval);
 
     time_remaining = 10.0;
+    time = time_remaining;
 
     document.getElementById('score').innerHTML = 0;
     document.getElementById('start-button').value = 'Stop [ESC]';
@@ -69,6 +70,7 @@ function stop(){
 }
 
 var interval = 0;
+var time = 0;
 var time_remaining = 0;
 
 window.onkeydown = function(e){
