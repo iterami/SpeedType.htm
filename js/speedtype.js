@@ -55,7 +55,7 @@ function start(){
     document.getElementById('time').innerHTML = time_remaining;
 
     interval = window.setInterval(
-      'decisecond()',
+      decisecond,
       100
     );
 }
