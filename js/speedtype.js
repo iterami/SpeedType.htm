@@ -17,8 +17,10 @@ function enter(){
 
     document.getElementById('text').value = '';
 
-    document.getElementById('score').innerHTML =
-      parseInt(document.getElementById('score').innerHTML) + 1;
+    document.getElementById('score').innerHTML = parseInt(
+      document.getElementById('score').innerHTML,
+      10
+    ) + 1;
 
     document.getElementById('target').innerHTML = random_word(5);
 
