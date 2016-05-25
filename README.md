@@ -9,3 +9,8 @@ Action            | Key
 ------------------|------
 Stop Current Game | ESC
 Submit            | ENTER
+
+---
+
+Requires:
+* [iterami/common](https://github.com/iterami/common)
