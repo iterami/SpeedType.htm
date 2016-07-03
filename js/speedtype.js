@@ -51,7 +51,6 @@ function start(){
     document.getElementById('start-button').value = 'Stop [ESC]';
     document.getElementById('start-button').onclick = stop;
     document.getElementById('target').innerHTML = random_word(5);
-    document.getElementById('text').disabled = false;
     document.getElementById('text').focus();
     document.getElementById('text').value = '';
     document.getElementById('time').innerHTML = time_remaining;
@@ -68,7 +67,6 @@ function stop(){
 
     document.getElementById('start-button').value = 'Start [H]';
     document.getElementById('start-button').onclick = start;
-    document.getElementById('text').disabled = true;
 }
 
 var interval = 0;
