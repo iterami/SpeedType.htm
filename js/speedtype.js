@@ -34,7 +34,7 @@ function random_word(length){
     var word = '';
 
     while(loop_counter < length){
-        word += letters[Math.floor(Math.random() * 26)];
+        word += letters[random_integer(26)];
         loop_counter++;
     }
 
