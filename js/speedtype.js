@@ -73,34 +73,26 @@ var interval = 0;
 var time = 0;
 var time_remaining = 0;
 
-window.onkeydown = function(e){
-    var key = e.keyCode || e.which;
-
-    // ENTER: enter typed value for validation.
-    if(key === 13){
-        enter();
-
-    // ESC: stop current game.
-    }else if(key === 27){
-        stop();
-    }
-};
-
 window.onload = function(e){
+    input_init(
+      {
+        13: {
+          'todo': enter,
+        },
+        27: {
+          'todo': stop,
+        },
+        72: {
+          'todo': function(){
+              if(interval === 0){
+                  start();
+              }
+          },
+        },
+      }
+    );
+
     document.getElementById('score').innerHTML = '0';
     document.getElementById('target').innerHTML = '-----';
     document.getElementById('time').innerHTML = '10.0';
-};
-
-window.onkeyup = function(e){
-    // Doesn't work if the game is running.
-    if(interval !== 0){
-        return;
-    }
-
-    var key = e.keyCode || e.which;
-
-    if(key === 72){
-        start();
-    }
 };
