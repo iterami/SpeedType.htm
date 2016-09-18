@@ -15,6 +15,8 @@ function enter(){
         return;
     }
 
+    audio_start('boop');
+
     document.getElementById('text').value = '';
 
     document.getElementById('score').innerHTML = parseInt(
@@ -89,6 +91,14 @@ window.onload = function(e){
               }
           },
         },
+      }
+    );
+    audio_init();
+    audio_create(
+      'boop',
+      {
+        'duration': .1,
+        'volume': .1,
       }
     );
 
