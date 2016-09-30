@@ -11,23 +11,24 @@ function decisecond(){
 }
 
 function enter(){
+    if(interval === 0){
+        start();
+    }
+
     if(document.getElementById('text').value !== document.getElementById('target').innerHTML){
         return;
     }
 
     audio_start('boop');
 
-    document.getElementById('text').value = '';
-
     document.getElementById('score').innerHTML = parseInt(
       document.getElementById('score').innerHTML,
       10
     ) + 1;
-
     document.getElementById('target').innerHTML = random_word(5);
+    document.getElementById('text').value = '';
 
-    time_remaining -= .1;
-    document.getElementById('time').innerHTML = time_remaining.toFixed(1);
+    set_time_remaining(time_remaining - .1);
 }
 
 function random_word(length){
@@ -43,11 +44,16 @@ function random_word(length){
     return word;
 }
 
+function set_time_remaining(new_time_remaining){
+    time_remaining = new_time_remaining;
+    time = time_remaining;
+    document.getElementById('time').innerHTML = time_remaining.toFixed(1);
+}
+
 function start(){
     window.clearInterval(interval);
 
-    time_remaining = 10.0;
-    time = time_remaining;
+    set_time_remaining(10.0);
 
     document.getElementById('score').innerHTML = 0;
     document.getElementById('start-button').value = 'Stop [ESC]';
@@ -55,7 +61,6 @@ function start(){
     document.getElementById('target').innerHTML = random_word(5);
     document.getElementById('text').focus();
     document.getElementById('text').value = '';
-    document.getElementById('time').innerHTML = time_remaining;
 
     interval = window.setInterval(
       decisecond,
@@ -67,7 +72,7 @@ function stop(){
     window.clearInterval(interval);
     interval = 0;
 
-    document.getElementById('start-button').value = 'Start [H]';
+    document.getElementById('start-button').value = 'Start [ENTER]';
     document.getElementById('start-button').onclick = start;
 }
 
@@ -83,13 +88,6 @@ window.onload = function(e){
         },
         27: {
           'todo': stop,
-        },
-        72: {
-          'todo': function(){
-              if(interval === 0){
-                  start();
-              }
-          },
         },
       }
     );
