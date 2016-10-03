@@ -100,6 +100,7 @@ window.onload = function(e){
       }
     );
 
+    document.getElementById('start-button').onclick = start;
     document.getElementById('score').innerHTML = '0';
     document.getElementById('target').innerHTML = '-----';
     document.getElementById('time').innerHTML = '10.0';
