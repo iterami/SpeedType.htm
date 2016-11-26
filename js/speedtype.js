@@ -19,7 +19,9 @@ function enter(){
         return;
     }
 
-    audio_start('boop');
+    audio_start({
+      'id': 'boop',
+    });
 
     document.getElementById('score').innerHTML = parseInt(
       document.getElementById('score').innerHTML,
@@ -92,13 +94,13 @@ window.onload = function(e){
       }
     );
     audio_init();
-    audio_create(
-      'boop',
-      {
+    audio_create({
+      'id': 'boop',
+      'properties': {
         'duration': .1,
         'volume': .1,
-      }
-    );
+      },
+    });
 
     document.getElementById('start-button').onclick = start;
     document.getElementById('score').innerHTML = '0';
