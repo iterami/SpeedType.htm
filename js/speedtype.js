@@ -27,23 +27,13 @@ function enter(){
       document.getElementById('score').innerHTML,
       10
     ) + 1;
-    document.getElementById('target').innerHTML = random_word(5);
+    document.getElementById('target').innerHTML = random_string({
+      'characters': letters,
+      'length': 5,
+    });
     document.getElementById('text').value = '';
 
     set_time_remaining(time_remaining - .1);
-}
-
-function random_word(length){
-    var letters = 'abcdefghijklmnopqrstuvwxyz';
-    var loop_counter = 0;
-    var word = '';
-
-    while(loop_counter < length){
-        word += letters[random_integer(26)];
-        loop_counter++;
-    }
-
-    return word;
 }
 
 function set_time_remaining(new_time_remaining){
@@ -60,7 +50,10 @@ function start(){
     document.getElementById('score').innerHTML = 0;
     document.getElementById('start-button').value = 'Stop [ESC]';
     document.getElementById('start-button').onclick = stop;
-    document.getElementById('target').innerHTML = random_word(5);
+    document.getElementById('target').innerHTML = random_string({
+      'characters': letters,
+      'length': 5,
+    });
     document.getElementById('text').focus();
     document.getElementById('text').value = '';
 
@@ -79,6 +72,7 @@ function stop(){
 }
 
 var interval = 0;
+var letters = 'abcdefghijklmnopqrstuvwxyz';
 var time = 0;
 var time_remaining = 0;
 
