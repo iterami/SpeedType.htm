@@ -77,16 +77,16 @@ var time = 0;
 var time_remaining = 0;
 
 window.onload = function(e){
-    input_init(
-      {
+    input_init({
+      'keybinds': {
         13: {
           'todo': enter,
         },
         27: {
           'todo': stop,
         },
-      }
-    );
+      },
+    });
     audio_init();
     audio_create({
       'id': 'boop',
