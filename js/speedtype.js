@@ -27,7 +27,7 @@ function enter(){
       document.getElementById('score').innerHTML,
       10
     ) + 1;
-    document.getElementById('target').innerHTML = random_string({
+    document.getElementById('target').innerHTML = core_random_string({
       'characters': letters,
       'length': 5,
     });
@@ -50,7 +50,7 @@ function start(){
     document.getElementById('score').innerHTML = 0;
     document.getElementById('start-button').value = 'Stop [ESC]';
     document.getElementById('start-button').onclick = stop;
-    document.getElementById('target').innerHTML = random_string({
+    document.getElementById('target').innerHTML = core_random_string({
       'characters': letters,
       'length': 5,
     });
