@@ -36,6 +36,32 @@ function enter(){
     set_time_remaining(time_remaining - .1);
 }
 
+function repo_init(){
+    core_input_binds_add({
+      'keybinds': {
+        13: {
+          'todo': enter,
+        },
+        27: {
+          'todo': stop,
+        },
+      },
+    });
+    audio_init();
+    audio_create({
+      'id': 'boop',
+      'properties': {
+        'duration': .1,
+        'volume': .1,
+      },
+    });
+
+    document.getElementById('start-button').onclick = start;
+    document.getElementById('score').innerHTML = '0';
+    document.getElementById('target').innerHTML = '-----';
+    document.getElementById('time').innerHTML = '10.0';
+}
+
 function set_time_remaining(new_time_remaining){
     time_remaining = new_time_remaining;
     time = time_remaining;
@@ -75,29 +101,3 @@ var interval = 0;
 var letters = 'abcdefghijklmnopqrstuvwxyz';
 var time = 0;
 var time_remaining = 0;
-
-window.onload = function(e){
-    core_input_init({
-      'keybinds': {
-        13: {
-          'todo': enter,
-        },
-        27: {
-          'todo': stop,
-        },
-      },
-    });
-    audio_init();
-    audio_create({
-      'id': 'boop',
-      'properties': {
-        'duration': .1,
-        'volume': .1,
-      },
-    });
-
-    document.getElementById('start-button').onclick = start;
-    document.getElementById('score').innerHTML = '0';
-    document.getElementById('target').innerHTML = '-----';
-    document.getElementById('time').innerHTML = '10.0';
-};
