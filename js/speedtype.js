@@ -37,7 +37,7 @@ function enter(){
 }
 
 function repo_init(){
-    core_input_binds_add({
+    core_events_bind({
       'keybinds': {
         13: {
           'todo': enter,
