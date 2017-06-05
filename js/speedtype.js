@@ -36,14 +36,15 @@ function enter(){
     set_time_remaining(time_remaining - .1);
 }
 
+function repo_escape(){
+    stop();
+}
+
 function repo_init(){
     core_events_bind({
       'keybinds': {
         13: {
           'todo': enter,
-        },
-        27: {
-          'todo': stop,
         },
       },
     });
