@@ -42,14 +42,12 @@ function repo_escape(){
 
 function repo_init(){
     core_repo_init({
-      'title': 'SpeedType.htm',
-    });
-    core_events_bind({
       'keybinds': {
         13: {
           'todo': enter,
         },
       },
+      'title': 'SpeedType.htm',
     });
     audio_init();
     audio_create({
