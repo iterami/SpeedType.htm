@@ -19,7 +19,7 @@ function enter(){
         return;
     }
 
-    audio_start({
+    core_audio_start({
       'id': 'boop',
     });
 
@@ -49,12 +49,10 @@ function repo_init(){
       },
       'title': 'SpeedType.htm',
     });
-    audio_init();
-    audio_create({
+    core_audio_create({
       'id': 'boop',
       'properties': {
         'duration': .1,
-        'volume': .1,
       },
     });
 
