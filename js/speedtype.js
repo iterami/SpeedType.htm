@@ -42,18 +42,17 @@ function repo_escape(){
 
 function repo_init(){
     core_repo_init({
+      'audios': {
+        'boop': {
+          'duration': .1,
+        },
+      },
       'keybinds': {
         13: {
           'todo': enter,
         },
       },
       'title': 'SpeedType.htm',
-    });
-    core_audio_create({
-      'id': 'boop',
-      'properties': {
-        'duration': .1,
-      },
     });
 
     document.getElementById('start-button').onclick = start;
