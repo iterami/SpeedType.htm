@@ -15,7 +15,9 @@ function enter(){
         start();
     }
 
-    if(document.getElementById('text').value !== document.getElementById('target').innerHTML){
+    var targetelement = document.getElementById('target');
+    var textelement = document.getElementById('text');
+    if(textelement.value !== targetelement.innerHTML){
         return;
     }
 
@@ -23,15 +25,16 @@ function enter(){
       'id': 'boop',
     });
 
-    document.getElementById('score').innerHTML = parseInt(
-      document.getElementById('score').innerHTML,
+    var element = document.getElementById('score');
+    element.innerHTML = parseInt(
+      element.innerHTML,
       10
     ) + 1;
-    document.getElementById('target').innerHTML = core_random_string({
+    targetelement.innerHTML = core_random_string({
       'characters': letters,
       'length': 5,
     });
-    document.getElementById('text').value = '';
+    textelement.value = '';
 
     set_time_remaining(time_remaining - .1);
 }
@@ -73,14 +76,16 @@ function start(){
     set_time_remaining(10.0);
 
     document.getElementById('score').innerHTML = 0;
-    document.getElementById('start-button').value = 'Stop [ESC]';
-    document.getElementById('start-button').onclick = stop;
+    var element = document.getElementById('start-button');
+    element.value = 'Stop [ESC]';
+    element.onclick = stop;
     document.getElementById('target').innerHTML = core_random_string({
       'characters': letters,
       'length': 5,
     });
-    document.getElementById('text').focus();
-    document.getElementById('text').value = '';
+    element = document.getElementById('text');
+    element.value = '';
+    element.focus();
 
     interval = window.setInterval(
       decisecond,
@@ -92,8 +97,9 @@ function stop(){
     window.clearInterval(interval);
     interval = 0;
 
-    document.getElementById('start-button').value = 'Start [ENTER]';
-    document.getElementById('start-button').onclick = start;
+    var element = document.getElementById('start-button');
+    element.value = 'Start [ENTER]';
+    element.onclick = start;
 }
 
 var interval = 0;
