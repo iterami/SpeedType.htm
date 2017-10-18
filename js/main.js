@@ -11,6 +11,11 @@ function repo_init(){
           'duration': .1,
         },
       },
+      'info-events': {
+        'start-button': {
+          'todo': start,
+        },
+      },
       'keybinds': {
         13: {
           'todo': enter,
@@ -19,7 +24,6 @@ function repo_init(){
       'title': 'SpeedType.htm',
     });
 
-    document.getElementById('start-button').onclick = start;
     document.getElementById('score').innerHTML = '0';
     document.getElementById('target').innerHTML = '-----';
     document.getElementById('time').innerHTML = '10.0';
