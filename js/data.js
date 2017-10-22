@@ -51,14 +51,18 @@ function start(){
     set_time_remaining(10.0);
 
     document.getElementById('score').innerHTML = 0;
-    var element = document.getElementById('start-button');
-    element.value = 'Stop [ESC]';
-    element.onclick = stop;
+    core_html_modify({
+      'id': 'start-button',
+      'properties': {
+        'onclick': stop,
+        'value': 'End [ESC]',
+      },
+    });
     document.getElementById('target').innerHTML = core_random_string({
       'characters': letters,
       'length': 5,
     });
-    element = document.getElementById('text');
+    var element = document.getElementById('text');
     element.value = '';
     element.focus();
 
@@ -72,9 +76,13 @@ function stop(){
     window.clearInterval(interval);
     interval = 0;
 
-    var element = document.getElementById('start-button');
-    element.value = 'Start [ENTER]';
-    element.onclick = start;
+    core_html_modify({
+      'id': 'start-button',
+      'properties': {
+        'onclick': start,
+        'value': 'Start [H]',
+      },
+    });
 }
 
 var interval = 0;
