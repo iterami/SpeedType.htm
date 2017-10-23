@@ -80,12 +80,7 @@ function stop(){
       'id': 'start-button',
       'properties': {
         'onclick': start,
-        'value': 'Start [H]',
+        'value': 'Start [ENTER]',
       },
     });
 }
-
-var interval = 0;
-var letters = 'abcdefghijklmnopqrstuvwxyz';
-var time = 0;
-var time_remaining = 0;
