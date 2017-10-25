@@ -32,7 +32,7 @@ function enter(){
     ) + 1;
     targetelement.innerHTML = core_random_string({
       'characters': letters,
-      'length': 5,
+      'length': core_storage_data['length'],
     });
     textelement.value = '';
 
@@ -48,7 +48,7 @@ function set_time_remaining(new_time_remaining){
 function start(){
     window.clearInterval(interval);
 
-    set_time_remaining(10.0);
+    set_time_remaining(core_storage_data['time-max']);
 
     document.getElementById('score').innerHTML = 0;
     core_html_modify({
@@ -60,7 +60,7 @@ function start(){
     });
     document.getElementById('target').innerHTML = core_random_string({
       'characters': letters,
-      'length': 5,
+      'length': core_storage_data['length'],
     });
     var element = document.getElementById('text');
     element.value = '';

@@ -27,10 +27,11 @@ function repo_init(){
           'todo': enter,
         },
       },
+      'storage': {
+        'length': 5,
+        'time-max': 10,
+      },
+      'storage-menu': '<table><tr><td><input id=length><td>Length<tr><td><input id=time-max><td>Time</table>',
       'title': 'SpeedType.htm',
     });
-
-    document.getElementById('score').innerHTML = '0';
-    document.getElementById('target').innerHTML = '-----';
-    document.getElementById('time').innerHTML = '10.0';
 }
