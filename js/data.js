@@ -6,12 +6,12 @@ function decisecond(){
     document.getElementById('time').innerHTML = time;
 
     if(time <= 0){
-        stop();
+        core_interval_pause_all();
     }
 }
 
 function enter(){
-    if(interval === 0){
+    if(core_intervals['interval']['paused']){
         start();
     }
 
@@ -46,18 +46,13 @@ function set_time_remaining(new_time_remaining){
 }
 
 function start(){
-    window.clearInterval(interval);
+    if(core_menu_open){
+        core_escape();
+    }
 
     set_time_remaining(core_storage_data['time-max']);
 
     document.getElementById('score').innerHTML = 0;
-    core_html_modify({
-      'id': 'start-button',
-      'properties': {
-        'onclick': stop,
-        'value': 'End [ESC]',
-      },
-    });
     document.getElementById('target').innerHTML = core_random_string({
       'characters': letters,
       'length': core_storage_data['length'],
@@ -66,21 +61,9 @@ function start(){
     element.value = '';
     element.focus();
 
-    interval = window.setInterval(
-      decisecond,
-      100
-    );
-}
-
-function stop(){
-    window.clearInterval(interval);
-    interval = 0;
-
-    core_html_modify({
-      'id': 'start-button',
-      'properties': {
-        'onclick': start,
-        'value': 'Start [ENTER]',
-      },
+    core_interval_modify({
+      'id': 'interval',
+      'interval': 100,
+      'todo': decisecond,
     });
 }
