@@ -9,7 +9,10 @@ function repo_init(){
       },
       'events': {
         'start-button': {
-          'onclick': start,
+          'onclick': function(){
+              core_escape();
+              start();
+          },
         },
       },
       'globals': {
@@ -23,6 +26,7 @@ function repo_init(){
           'todo': enter,
         },
       },
+      'menu': true,
       'storage': {
         'length': 5,
         'time-max': 10,
@@ -30,6 +34,4 @@ function repo_init(){
       'storage-menu': '<table><tr><td><input id=length><td>Length<tr><td><input id=time-max><td>Time</table>',
       'title': 'SpeedType.htm',
     });
-
-    start();
 }

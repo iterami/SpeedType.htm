@@ -46,10 +46,6 @@ function set_time_remaining(new_time_remaining){
 }
 
 function start(){
-    if(core_menu_open){
-        core_escape();
-    }
-
     set_time_remaining(core_storage_data['time-max']);
 
     document.getElementById('score').innerHTML = 0;
