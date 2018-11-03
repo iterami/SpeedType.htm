@@ -36,7 +36,7 @@ function enter(){
     });
     textelement.value = '';
 
-    set_time_remaining(time_remaining - .1);
+    set_time_remaining(time_remaining - core_storage_data['time-decrease']);
 }
 
 function set_time_remaining(new_time_remaining){

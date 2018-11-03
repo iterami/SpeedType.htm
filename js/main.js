@@ -29,9 +29,10 @@ function repo_init(){
       'menu': true,
       'storage': {
         'length': 5,
+        'time-decrease': .1,
         'time-max': 10,
       },
-      'storage-menu': '<table><tr><td><input id=length><td>Length<tr><td><input id=time-max><td>Time</table>',
+      'storage-menu': '<table><tr><td><input id=length><td>Length<tr><td><input id=time-decrease><td>Time Decrease<tr><td><input id=time-max><td>Time Max</table>',
       'title': 'SpeedType.htm',
     });
 }
