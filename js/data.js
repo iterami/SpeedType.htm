@@ -7,6 +7,7 @@ function decisecond(){
 
     if(time <= 0){
         core_interval_pause_all();
+        document.getElementById('text').readOnly = true;
     }
 }
 
@@ -55,6 +56,7 @@ function start(){
     });
     let element = document.getElementById('text');
     element.value = '';
+    element.readOnly = false;
     element.focus();
 
     core_interval_modify({
