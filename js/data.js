@@ -1,7 +1,10 @@
 'use strict';
 
 function decisecond(){
-    time = (time - .1).toFixed(1);
+    time = core_round({
+      'decimals': 1,
+      'number': time - .1,
+    });
 
     document.getElementById('time').innerHTML = time;
 
@@ -43,7 +46,10 @@ function enter(){
 function set_time_remaining(new_time_remaining){
     time_remaining = new_time_remaining;
     time = time_remaining;
-    document.getElementById('time').innerHTML = time_remaining.toFixed(1);
+    document.getElementById('time').innerHTML = core_round({
+      'decimals': 1,
+      'number': time_remaining,
+    });
 }
 
 function start(){
