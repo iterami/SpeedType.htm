@@ -2,11 +2,6 @@
 
 function repo_init(){
     core_repo_init({
-      'audios': {
-        'boop': {
-          'duration': .1,
-        },
-      },
       'events': {
         'start-button': {
           'onclick': function(){
@@ -36,5 +31,12 @@ function repo_init(){
         + '<tr><td><input id=time-decrease><td>Time Decrease'
         + '<tr><td><input id=time-max><td>Time Max</table>',
       'title': 'SpeedType.htm',
+    });
+    audio_create({
+      'audios': {
+        'boop': {
+          'duration': .1,
+        },
+      },
     });
 }
