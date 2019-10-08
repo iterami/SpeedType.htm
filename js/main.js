@@ -1,5 +1,12 @@
 'use strict';
 
+function repo_escape(){
+    if(!core_intervals['interval']
+      && !core_menu_open){
+        start();
+    }
+}
+
 function repo_init(){
     core_repo_init({
       'events': {
