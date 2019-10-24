@@ -6,7 +6,10 @@ function decisecond(){
       'number': time - .1,
     });
 
-    core_elements['time'].innerHTML = time;
+    core_elements['time'].innerHTML = core_number_format({
+      'decimals-min': 1,
+      'number': time,
+    });
 
     if(time <= 0){
         core_interval_pause_all();
