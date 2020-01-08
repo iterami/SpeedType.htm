@@ -6,7 +6,7 @@ function decisecond(){
       'number': time - .1,
     });
 
-    core_elements['time'].innerHTML = core_number_format({
+    core_elements['time'].textContent = core_number_format({
       'decimals-min': 1,
       'number': time,
     });
@@ -24,7 +24,7 @@ function enter(){
 
     let targetelement = document.getElementById('target');
     let textelement = document.getElementById('text');
-    if(textelement.value !== targetelement.innerHTML){
+    if(textelement.value !== targetelement.textContent){
         return;
     }
 
@@ -33,11 +33,11 @@ function enter(){
     });
 
     let element = document.getElementById('score');
-    element.innerHTML = Number.parseInt(
-      element.innerHTML,
+    element.textContent = Number.parseInt(
+      element.textContent,
       10
     ) + 1;
-    targetelement.innerHTML = core_random_string({
+    targetelement.textContent = core_random_string({
       'characters': letters,
       'length': core_storage_data['length'],
     });
@@ -49,7 +49,7 @@ function enter(){
 function set_time_remaining(new_time_remaining){
     time_remaining = new_time_remaining;
     time = time_remaining;
-    core_elements['time'].innerHTML = core_round({
+    core_elements['time'].textContent = core_round({
       'decimals': 1,
       'number': time_remaining,
     });
@@ -58,8 +58,8 @@ function set_time_remaining(new_time_remaining){
 function start(){
     set_time_remaining(core_storage_data['time-max']);
 
-    document.getElementById('score').innerHTML = 0;
-    document.getElementById('target').innerHTML = core_random_string({
+    document.getElementById('score').textContent = 0;
+    document.getElementById('target').textContent = core_random_string({
       'characters': letters,
       'length': core_storage_data['length'],
     });
