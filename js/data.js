@@ -22,8 +22,8 @@ function enter(){
         start();
     }
 
-    let targetelement = document.getElementById('target');
-    let textelement = document.getElementById('text');
+    const targetelement = document.getElementById('target');
+    const textelement = document.getElementById('text');
     if(textelement.value !== targetelement.textContent){
         return;
     }
@@ -32,7 +32,7 @@ function enter(){
       'id': 'boop',
     });
 
-    let element = document.getElementById('score');
+    const element = document.getElementById('score');
     element.textContent = Number.parseInt(
       element.textContent,
       10
@@ -63,7 +63,7 @@ function start(){
       'characters': letters,
       'length': core_storage_data['length'],
     });
-    let element = document.getElementById('text');
+    const element = document.getElementById('text');
     element.value = '';
     element.readOnly = false;
     element.focus();
