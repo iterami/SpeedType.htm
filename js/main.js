@@ -34,9 +34,9 @@ function repo_init(){
         'time-decrease': .1,
         'time-max': 10,
       },
-      'storage-menu': '<table><tr><td><input id=length><td>Length'
-        + '<tr><td><input id=time-decrease><td>Time Decrease'
-        + '<tr><td><input id=time-max><td>Time Max</table>',
+      'storage-menu': '<table><tr><td><input id=length min=1 type=number><td>Length'
+        + '<tr><td><input id=time-decrease type=number><td>Time Decrease'
+        + '<tr><td><input id=time-max type=number><td>Time Max</table>',
       'title': 'SpeedType.htm',
     });
     audio_create({
