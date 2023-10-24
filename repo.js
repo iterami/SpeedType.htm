@@ -70,7 +70,7 @@ function repo_init(){
       },
       'info': '<input id=start-button type=button value=Restart>',
       'keybinds': {
-        13: {
+        'Enter': {
           'todo': enter,
         },
       },
