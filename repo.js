@@ -92,11 +92,9 @@ function repo_init(){
         },
       },
     });
-    core_html_store({
-      'ids': [
-        'time',
-      ],
-    });
+    core_html_store([
+      'time',
+    ]);
 }
 
 function set_time_remaining(new_time_remaining){
