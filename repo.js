@@ -68,7 +68,7 @@ function repo_init(){
         'time': 0,
         'time_remaining': 0,
       },
-      'info': '<input id=start-button type=button value=Restart>',
+      'info': '<button id=start-button type=button>Restart</button>',
       'keybinds': {
         'Enter': {
           'todo': enter,
