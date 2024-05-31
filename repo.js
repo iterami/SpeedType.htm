@@ -83,9 +83,7 @@ function repo_init(){
         + '<tr><td><input class=mini id=time-max step=any type=number><td>Time Max</table>',
       'title': 'SpeedType.htm',
     });
-    core_html_store([
-      'time',
-    ]);
+    core_elements['time'] = document.getElementById('time');
 }
 
 function set_time_remaining(new_time_remaining){
