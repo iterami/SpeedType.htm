@@ -59,6 +59,12 @@ function repo_escape(){
 function repo_init(){
     core_repo_init({
       'events': {
+        'go': {
+          'onclick': function(){
+              enter();
+              core_elements['text'].focus();
+          },
+        },
         'start-button': {
           'onclick': function(){
               core_escape();
