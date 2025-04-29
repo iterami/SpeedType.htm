@@ -31,13 +31,9 @@ function enter(){
     }
 
     audio_start('boop');
-
     core_ui_update({
       'ids': {
-        'score': Number.parseInt(
-          core_elements['score'].textContent,
-          10
-        ) + 1,
+        'score': ++score,
         'target': core_random_string({
           'characters': letters,
           'length': core_storage_data['length'],
@@ -74,6 +70,7 @@ function repo_init(){
       },
       'globals': {
         'letters': 'abcdefghijklmnopqrstuvwxyz',
+        'score': 0,
         'time': 0,
         'time_remaining': 0,
       },
@@ -110,6 +107,11 @@ function set_time_remaining(new_time_remaining){
 }
 
 function start(){
+    if(score > 0
+      && !globalThis.confirm('Start new game?')){
+        return;
+    }
+    score = 0;
     set_time_remaining(core_storage_data['time-max']);
 
     core_ui_update({
