@@ -63,7 +63,8 @@ function repo_init(){
         },
         'text': {
           'onkeydown': function(event){
-              if(event.code === 'Enter'){
+              if(event.key === 'Enter'){
+                  event.preventDefault();
                   enter();
               }
           },
