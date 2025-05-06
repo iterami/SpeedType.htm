@@ -55,16 +55,17 @@ function repo_escape(){
 function repo_init(){
     core_repo_init({
       'events': {
-        'go': {
-          'onclick': function(){
-              enter();
-              core_elements['text'].focus();
-          },
-        },
         'start-button': {
           'onclick': function(){
               core_escape();
               start();
+          },
+        },
+        'text': {
+          'onkeydown': function(event){
+              if(event.code === 'Enter'){
+                  enter();
+              }
           },
         },
       },
@@ -75,11 +76,6 @@ function repo_init(){
         'time_remaining': 0,
       },
       'info': '<button id=start-button type=button>Restart</button>',
-      'keybinds': {
-        'Enter': {
-          'todo': enter,
-        },
-      },
       'menu': true,
       'storage': {
         'length': 5,
