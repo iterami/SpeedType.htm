@@ -17,16 +17,16 @@ function decisecond(){
 
     if(time <= 0){
         core_interval_pause_all();
-        core_elements['text'].readOnly = true;
+        core_elements.text.readOnly = true;
     }
 }
 
 function enter(){
-    if(core_intervals['interval']['paused']){
+    if(core_intervals.interval.paused){
         start();
     }
 
-    if(core_elements['text'].value !== core_elements['target'].textContent){
+    if(core_elements.text.value !== core_elements.target.textContent){
         return;
     }
 
@@ -36,17 +36,17 @@ function enter(){
         'score': ++score,
         'target': core_random_string({
           'characters': letters,
-          'length': core_storage_data['length'],
+          'length': core_storage_data.length,
         }),
       },
     });
-    core_elements['text'].value = '';
+    core_elements.text.value = '';
 
-    set_time_remaining(time_remaining - core_storage_data['time-decrease']);
+    set_time_remaining(time_remaining - core_storage_data.time_decrease);
 }
 
 function repo_escape(){
-    if(!core_intervals['interval']
+    if(!core_intervals.interval
       && !core_menu_open){
         start();
     }
@@ -80,12 +80,12 @@ function repo_init(){
       'menu': true,
       'storage': {
         'length': 5,
-        'time-decrease': .1,
-        'time-max': 10,
+        'time_decrease': .1,
+        'time_max': 10,
       },
       'storage-menu': '<table><tr><td><input class=mini id=length min=1 step=1 type=number><td>Length'
-        + '<tr><td><input class=mini id=time-decrease step=any type=number><td>Time Decrease'
-        + '<tr><td><input class=mini id=time-max step=any type=number><td>Time Max</table>',
+        + '<tr><td><input class=mini id=time_decrease step=any type=number><td>Time Decrease'
+        + '<tr><td><input class=mini id=time_max step=any type=number><td>Time Max</table>',
       'title': 'SpeedType.htm',
     });
 }
@@ -109,20 +109,20 @@ function start(){
         return;
     }
     score = 0;
-    set_time_remaining(core_storage_data['time-max']);
+    set_time_remaining(core_storage_data.time_max);
 
     core_ui_update({
       'ids': {
         'score': 0,
         'target': core_random_string({
           'characters': letters,
-          'length': core_storage_data['length'],
+          'length': core_storage_data.length,
         }),
         'text': '',
       },
     });
-    core_elements['text'].readOnly = false;
-    core_elements['text'].focus();
+    core_elements.text.readOnly = false;
+    core_elements.text.focus();
 
     core_interval_modify({
       'id': 'interval',
