@@ -54,6 +54,13 @@ function repo_escape(){
 
 function repo_init(){
     core_repo_init({
+      'beforeunload': {
+        'todo': function(event){
+            if(score > 0){
+                event.preventDefault();
+            }
+        },
+      },
       'events': {
         'start-button': {
           'onclick': function(){
