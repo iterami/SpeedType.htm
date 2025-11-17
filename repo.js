@@ -1,19 +1,21 @@
 'use strict';
 
 function decisecond(){
-    time = core_round({
-      'decimals': 1,
-      'number': time - .1,
-    });
+    if(time > 0){
+        time = core_round({
+          'decimals': 1,
+          'number': time - .1,
+        });
 
-    core_ui_update({
-      'ids': {
-        'time': core_number_format({
-          'decimals_min': 1,
-          'number': time,
-        }),
-      },
-    });
+        core_ui_update({
+          'ids': {
+            'time': core_number_format({
+              'decimals_min': 1,
+              'number': time,
+            }),
+          },
+        });
+    }
 
     if(time <= 0){
         core_interval_pause_all();
@@ -50,6 +52,8 @@ function repo_escape(){
       && !core_menu_open){
         start();
     }
+
+    core_elements.text.readOnly = core_menu_open || time <= 0;
 }
 
 function repo_init(){
@@ -95,6 +99,9 @@ function repo_init(){
         + '<tr><td><input class=mini id=time_decrease step=any type=number><td>Time Decrease'
         + '<tr><td><input class=mini id=time_max step=any type=number><td>Time Max</table>',
       'title': 'SpeedType.htm',
+      'ui_elements': [
+        'text',
+      ],
     });
 }
 
