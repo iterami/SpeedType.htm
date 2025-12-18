@@ -67,7 +67,7 @@ function repo_init(){
         },
       },
       'events': {
-        'start-button': {
+        'restart': {
           'onclick': function(){
               core_escape();
               start();
@@ -88,7 +88,7 @@ function repo_init(){
         'time': 0,
         'time_remaining': 0,
       },
-      'info': '<button id=start-button type=button>Restart</button>',
+      'info': '<button id=restart type=button>Restart</button>',
       'menu': true,
       'storage': {
         'length': 5,
