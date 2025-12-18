@@ -60,7 +60,7 @@ function repo_init(){
     core_repo_init({
       'beforeunload': {
         'todo': function(event){
-            if(score > 0){
+            if(score !== 0){
                 core_escape(true);
                 event.preventDefault();
             }
@@ -119,7 +119,7 @@ function set_time_remaining(new_time_remaining){
 }
 
 function start(){
-    if(score > 0
+    if(score !== 0
       && !globalThis.confirm('Start new game?')){
         return;
     }
