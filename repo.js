@@ -18,7 +18,7 @@ function decisecond(){
     }
 
     if(time <= 0){
-        core_interval_pause_all();
+        core_interval_lock('interval');
         core_elements.text.readOnly = true;
     }
 }
