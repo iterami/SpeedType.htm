@@ -88,7 +88,7 @@ function repo_init(){
         'time': 0,
         'time_remaining': 0,
       },
-      'info': '<button id=start type=button>Start New Game</button>',
+      'info': '<button class=medium id=start type=button>Start New Game</button>',
       'menu': true,
       'storage': {
         'length': 5,
