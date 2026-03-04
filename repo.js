@@ -37,7 +37,7 @@ function enter(){
       'ids': {
         'score': ++score,
         'target': core_random_string({
-          'characters': letters,
+          'characters': core_storage_data.letters,
           'length': core_storage_data.length,
         }),
       },
@@ -83,7 +83,6 @@ function repo_init(){
         },
       },
       'globals': {
-        'letters': 'abcdefghijklmnopqrstuvwxyz',
         'score': 0,
         'time': 0,
         'time_remaining': 0,
@@ -92,10 +91,12 @@ function repo_init(){
       'menu': true,
       'storage': {
         'length': 5,
+        'letters': 'abcdefghijklmnopqrstuvwxyz',
         'time_decrease': .1,
         'time_max': 10,
       },
-      'storage_menu': '<table><tr><td><input class=mini id=length min=1 step=1 type=number><td>Length'
+      'storage_menu': '<textarea id=letters></textarea>'
+        + '<table><tr><td><input class=mini id=length min=1 step=1 type=number><td>Length'
         + '<tr><td><input class=mini id=time_decrease step=any type=number><td>Time Decrease'
         + '<tr><td><input class=mini id=time_max step=any type=number><td>Time Max</table>',
       'title': 'SpeedType.htm',
@@ -130,7 +131,7 @@ function start(){
       'ids': {
         'score': 0,
         'target': core_random_string({
-          'characters': letters,
+          'characters': core_storage_data.letters,
           'length': core_storage_data.length,
         }),
         'text': '',
