@@ -69,7 +69,7 @@ function repo_init(){
       'events': {
         'start': {
           'onclick': function(){
-              core_escape();
+              core_escape(false);
               start();
           },
         },
