@@ -98,7 +98,7 @@ function repo_init(){
       'storage_menu': '<textarea id=letters></textarea>'
         + '<table><tr><td><input class=mini id=length min=1 step=1 type=number><td>Length'
         + '<tr><td><input class=mini id=time_decrease step=any type=number><td>Time Decrease'
-        + '<tr><td><input class=mini id=time_max step=any type=number><td>Time Max</table>',
+        + '<tr><td><input class=mini id=time_max min=.1 step=any type=number><td>Time Max</table>',
       'title': 'SpeedType.htm',
       'ui_elements': [
         'text',
