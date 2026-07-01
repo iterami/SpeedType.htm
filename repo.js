@@ -20,6 +20,7 @@ function decisecond(){
     if(time <= 0){
         core_interval_lock('interval');
         core_elements.text.readOnly = true;
+        core_elements.text.blur();
     }
 }
 
@@ -102,6 +103,7 @@ function repo_init(){
         + '<tr><td><input class=mini id=time_decrease step=any type=number><td>Time Decrease'
         + '<tr><td><input class=mini id=time_max min=.1 step=any type=number><td>Time Max</table>',
       'title': 'SpeedType.htm',
+      'ui': ' <span id=score></span> | <span id=time></span>',
       'ui_elements': [
         'text',
       ],
