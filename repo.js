@@ -61,13 +61,11 @@ function repo_escape(){
 
 function repo_init(){
     core_repo_init({
-      'beforeunload': {
-        'todo': function(event){
-            if(score !== 0){
-                core_escape(true);
-                event.preventDefault();
-            }
-        },
+      'beforeunload': function(event){
+          if(score !== 0){
+              core_escape(true);
+              event.preventDefault();
+          }
       },
       'events': {
         'start': {
@@ -104,9 +102,7 @@ function repo_init(){
         + '<tr><td><input class=mini id=time_max min=.1 step=any type=number><td>Time Max</table>',
       'title': 'SpeedType.htm',
       'ui': ' <span id=score></span> | <span id=time></span>',
-      'ui_elements': [
-        'text',
-      ],
+      'ui_elements': ['text'],
     });
 }
 
